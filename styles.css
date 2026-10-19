@@ -155,3 +155,10 @@ h3{font-size:18px;font-weight:600;margin-bottom:10px;line-height:1.35}
   .vm>div{padding:28px 24px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+
+.edu{margin-top:28px}
+.edu ul{list-style:none;display:grid;gap:0;margin-top:8px}
+.edu li{display:grid;grid-template-columns:1fr auto;column-gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.edu b{font-weight:600;font-size:15px}
+.edu span{grid-column:1;color:var(--muted);font-size:14px}
+.edu i{grid-column:2;grid-row:1/span 2;align-self:center;font-style:normal;font-weight:600;color:var(--teal);font-size:14px}
