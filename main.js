@@ -3,6 +3,7 @@ const btn = document.getElementById('lang');
 function setLang(l) {
   document.documentElement.lang = l;
   document.querySelectorAll('[data-' + l + ']').forEach(el => { el.innerHTML = el.dataset[l]; });
+  document.querySelectorAll('[data-alt-' + l + ']').forEach(el => { el.alt = el.getAttribute('data-alt-' + l); });
   btn.textContent = l === 'tr' ? 'EN' : 'TR';
   try { localStorage.setItem('lang', l); } catch (e) {}
 }
@@ -18,7 +19,7 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
 // Bölüm girişi animasyonu
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-document.querySelectorAll('.sec h2, .card, .steps li, .values div, .info li').forEach(el => { el.classList.add('rv'); io.observe(el); });
+document.querySelectorAll('.sec h2, .card, .steps li, .values div, .info li, .photo, .apps-list li, .adv div, .vm > div, .founder').forEach(el => { el.classList.add('rv'); io.observe(el); });
 
 document.getElementById('yil').textContent = new Date().getFullYear();
 
